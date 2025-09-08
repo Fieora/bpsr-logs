@@ -2,17 +2,8 @@
 name = "bpsr-logs"
 version = "0.1.0"
 description = "A Tauri App"
-authors = ["you"]
+authors = ["winj"]
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[lib]
-# The `_lib` suffix may seem redundant but it is necessary
-# to make the lib name unique and wouldn't conflict with the bin name.
-# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
-name = "bpsr_logs_lib"
-crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
 tauri-build = { version = "2", features = [] }
@@ -22,4 +13,18 @@ tauri = { version = "2", features = [] }
 tauri-plugin-opener = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-
+bpsr-protobuf = { git = "https://github.com/winjwinj/bpsr-protobuf" }
+tauri-plugin-single-instance = "2.3.4"
+anyhow = "1.0.99"
+log = "0.4.28"
+byteorder = "1.5.0"
+tokio = { version = "1.47.1", features = ["rt", "rt-multi-thread", "macros"] }
+hex = "0.4.3"
+etherparse = "0.19.0"
+windivert = { version = "0.6.0", features = ["vendored"] }
+windivert-sys = "0.10.0"
+zstd = "0.13.3"
+tauri-plugin-log = { version = "2.7.0", features = ["colored"] }
+bytes = "1.10.1"
+prost = "0.14.1"
+chrono = "0.4.41"
